@@ -6,6 +6,63 @@ body {
 .row{
   padding: 5px;
 }
+
+/* Preloader container */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ripple animation */
+.ripple {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.ripple div {
+  position: absolute;
+  border: 4px solid #0d6efd;
+  opacity: 0;
+  border-radius: 50%;
+  animation: ripple-animation 2s infinite;
+}
+
+.ripple div:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.ripple div:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+@keyframes ripple-animation {
+  0% {
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+    transform: none;
+  }
+}
+
 .hero {
   background: url('https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/wp1lcwdav1p1/5PbtVEidv28K3XNOywzVj3/fedb6ac03469ce4de8720bc0995df898/GettyImages-1620440886.jpg?w=1500&h=680&q=60&fit=fill&f=faces&fm=jpg&fl=progressive&auto=format%2Ccompress&dpr=1&w=1000') center center / cover no-repeat;
   height: 100vh;
